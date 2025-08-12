@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   output: 'export',                // genera HTML estático en /out
   images: { unoptimized: true },   // next/image sin optimizador (Pages no corre server)
   basePath: isProd ? '/techway-site' : '',   // usa el nombre del repo
-  assetPrefix: isProd ? '/techway-site/' : '', // asegúrate que los assets resuelvan
+  assetPrefix: isProd ? '/techway-site' : '', // sin barra final para evitar dobles barras
   trailingSlash: true,             // opcional, evita 404 raros
 };
 
