@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
+const isProd = process.env.NODE_ENV === 'production'
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',                // genera HTML estático en /out
+  images: { unoptimized: true },   // next/image sin optimizador (Pages no corre server)
+  basePath: isProd ? '/techway-site' : '',   // usa el nombre del repo
+  assetPrefix: isProd ? '/techway-site/' : '', // asegúrate que los assets resuelvan
+  trailingSlash: true,             // opcional, evita 404 raros
 };
 
 export default nextConfig;
